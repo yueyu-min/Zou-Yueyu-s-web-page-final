@@ -1,0 +1,366 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>遊戲壁紙</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <style>
+    /* 這是用來設置背景圖片 */
+    body {
+      background-image: url('images/background.jpg.png'); /* 設定背景圖片路徑 */
+      background-size: cover; /* 讓圖片完全覆蓋整個頁面 */
+      background-position: center; /* 讓圖片居中顯示 */
+      background-attachment: fixed; /* 背景圖片固定顯示，不隨著滾動條移動 */
+    }
+
+    /* 新增圖片展示容器的Flexbox布局 */
+    .hero-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* 圖片居中顯示 */
+      gap: 20px; /* 圖片之間的間距 */
+      padding: 20px;
+    }
+
+    .hero-item {
+      width: 360px; /* 增大每個小圖片的寬度 */
+      text-align: center; /* 圖片和標題都居中 */
+    }
+
+    .hero-item img {
+      width: 100%; /* 圖片佔滿整個容器 */
+      border-radius: 8px; /* 圓角效果 */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 增加陰影效果 */
+    }
+
+    /* 圖片標題的樣式 */
+    .hero-item h3 {
+      margin-top: 8px; /* 標題和圖片的間距 */
+      font-size: 16px; /* 標題字體大小 */
+      color: #333; /* 標題文字顏色 */
+      text-shadow: 1px 1px 2px rgba(209, 209, 205, 0.8); /* 增加文字陰影以提高可讀性 */
+    }
+
+    /* 調整圖片間距和對齊方式 */
+    .hero-gallery img {
+      margin: 5px;
+    }
+
+    /* 標題上方的篩選選單樣式 */
+    .filter-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .filter-container select {
+      font-size: 16px;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    /* 分頁控制 */
+    .pagination {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .pagination a {
+      margin: 0 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      text-decoration: none;
+      font-size: 16px;
+      color: #333;
+      background-color: #fff;
+    }
+
+    .pagination a:hover {
+      background-color: #f4f4f4;
+    }
+
+    /* 頁碼樣式 */
+    .page-numbers {
+      display: inline-flex;
+      gap: 8px;
+    }
+
+    .page-numbers a {
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      text-decoration: none;
+      font-size: 16px;
+      color: #333;
+      background-color: #fff;
+    }
+
+    .page-numbers a:hover {
+      background-color: #f4f4f4;
+    }
+  </style>
+
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+         	<!-- Header -->
+<header id="header">
+    <a href="index.html" class="logo"><strong>王者榮耀首頁 / 遊戲壁紙</strong></a>
+    <ul class="icons">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <li><a href="https://weibo.com/heromoba" class="icon brands fa-weibo" target="_blank"><span class="label">微博</span></a></li>
+        <li><a href="https://weixin.qq.com" class="icon brands fa-weixin" target="_blank"><span class="label">微信</span></a></li>
+        <li><a href="https://game.qq.com/web202406/#/pc/home" class="icon brands fa-tencent-weibo" target="_blank"><span class="label">Instagram</span></a></li>
+    </ul>
+          </header>
+
+          <!-- Content -->
+          <section>
+            <header class="main">
+              <h1>英雄壁紙</h1>
+            </header>
+
+            <!-- Hero Gallery -->
+            <div class="hero-gallery">
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero1"><img src="images/0.jpg" alt="Hero 1" /></a>
+                <h3>影-魅影綺裳</h3>
+              </div>
+              <div class="hero-item" data-type="mage">
+                <a href="hero_details.html?hero=hero2"><img src="images/1.jpg" alt="Hero 2" /></a>
+                <h3>孫策-時之奇旅</h3>
+              </div>
+              <div class="hero-item" data-type="mage">
+                <a href="hero_details.html?hero=hero2"><img src="images/3.jpg" alt="Hero 2" /></a>
+                <h3>馬可波羅-怪盜基德</h3>
+              </div>
+              <div class="hero-item" data-type="assassin">
+                <a href="hero_details.html?hero=hero3"><img src="images/4.jpg" alt="Hero 3" /></a>
+                <h3>魯班七號-江戶川柯南</h3>
+              </div>
+              <div class="hero-item" data-type="marksman">
+                <a href="hero_details.html?hero=hero4"><img src="images/2.jpg" alt="Hero 4" /></a>
+                <h3>姬小滿-飛車小橘子</h3>
+              </div>
+              <div class="hero-item" data-type="support">
+                <a href="hero_details.html?hero=hero5"><img src="images/5.jpg" alt="Hero 5" /></a>
+                <h3>呂布-逐霄戰戟</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/6.jpg" alt="Hero 6" /></a>
+                <h3>王昭君-映山客</h3>
+              </div>
+              <div class="hero-item" data-type="mage">
+                <a href="hero_details.html?hero=hero2"><img src="images/7.jpg" alt="Hero 2" /></a>
+                <h3>艾琳-陌上桑</h3>
+              </div>
+              <div class="hero-item" data-type="assassin">
+                <a href="hero_details.html?hero=hero3"><img src="images/8.jpg" alt="Hero 3" /></a>
+                <h3>桑啟-鳴野蒿</h3>
+              </div>
+              <div class="hero-item" data-type="marksman">
+                <a href="hero_details.html?hero=hero4"><img src="images/9.jpg" alt="Hero 4" /></a>
+                <h3>亞瑟-動物派對</h3>
+              </div>
+              <div class="hero-item" data-type="support">
+                <a href="hero_details.html?hero=hero5"><img src="images/10.jpg" alt="Hero 5" /></a>
+                <h3>莊周-牧神詩旅</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/11.jpg" alt="Hero 6" /></a>
+                <h3>瑤-拾光照片</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/12.jpg" alt="Hero 6" /></a>
+                <h3>公孫離-離恨煙</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/13.jpg" alt="Hero 6" /></a>
+                <h3>夏侯惇-霜北刀</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/14.jpg" alt="Hero 6" /></a>
+                <h3>暃-埋骨錢</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/15.jpg" alt="Hero 6" /></a>
+                <h3>蒙犽-頑岩魄</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/16.jpg" alt="Hero 6" /></a>
+                <h3>大喬-絨語心約</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/17.jpg" alt="Hero 6" /></a>
+                <h3>花合鬥-不知火舞</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/18.jpg" alt="Hero 6" /></a>
+                <h3>朵莉亞-心動日記</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/19.jpg" alt="Hero 6" /></a>
+                <h3>墨子-黃金天蠍座</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/20.jpg" alt="Hero 6" /></a>
+                <h3>桑啟-奇遇星旅</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/21.jpg" alt="Hero 6" /></a>
+                <h3>亞連-落雪白狼</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/22.jpg" alt="Hero 6" /></a>
+                <h3>小喬-時之魔女</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/23.jpg" alt="Hero 6" /></a>
+                <h3>趙雲-乘龍•銘鐘鼎</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/24.jpg" alt="Hero 6" /></a>
+                <h3>孫尚香-乘龍•問璇璣</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/25.jpg" alt="Hero 6" /></a>
+                <h3>孫策-乘龍•淬吳鉤</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/26.jpg" alt="Hero 6" /></a>
+                <h3>大喬-乘龍•憶丹青</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/27.jpg" alt="Hero 6" /></a>
+                <h3>安琪拉-乘龍•聚寶船</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/28.jpg" alt="Hero 6" /></a>
+                <h3>瀾-逐花歸海</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/29.jpg" alt="Hero 6" /></a>
+                <h3>妲己-青丘•九尾</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/30.jpg" alt="Hero 6" /></a>
+                <h3>艾琳-尋芳蹤</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/31.jpg" alt="Hero 6" /></a>
+                <h3>西施-至美乘鯉謠</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/32.jpg" alt="Hero 6" /></a>
+                <h3>百里守約-真我赫茲</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/33.jpg" alt="Hero 6" /></a>
+                <h3>貂蟬-幻闕歌</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/34.jpg" alt="Hero 6" /></a>
+                <h3>弈星-滕王閣序</h3>
+              </div>
+              <div class="hero-item" data-type="warrior">
+                <a href="hero_details.html?hero=hero6"><img src="images/35.jpg" alt="Hero 6" /></a>
+                <h3>貂蟬-仲夏夜之夢</h3>
+              </div>
+            
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+              <a href="#">&laquo; 上一頁</a>
+
+              <!-- Page Numbers -->
+              <span class="page-numbers">
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+              </span>
+
+              <a href="#">下一頁 &raquo;</a>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <div class="inner">
+          <!-- Search -->
+          <section id="search" class="alt">
+            <form method="post" action="#">
+              <input type="text" name="query" id="query" placeholder="搜尋英雄或攻略" />
+            </form>
+          </section>
+
+          <!-- Menu -->
+          <nav id="menu">
+            <header class="major">
+              <h2>導航</h2>
+            </header>
+            <ul>
+              <li><a href="index.html">首頁</a></li>
+              <li><a href="activity.html">版本專區</a></li>
+              <li><a href="elements.html">英雄名鑑</a></li>
+              <li><a href="background.html">遊戲壁紙</a></li>
+              <li><a href="generic.html">騰訊成長守護</a></li>
+            </ul>
+          </nav>
+
+          <!-- Contact -->
+          <section>
+            <header class="major">
+              <h2>聯繫我們</h2>
+            </header>
+            <p>如有任何問題，歡迎聯繫我們的客服團隊。</p>
+            <ul class="contact">
+              <li class="icon solid fa-envelope"><a href="mailto:service@honorofkings.com">service@honorofkings.com</a></li>
+              <li class="icon solid fa-phone">(888) 888-8888</li>
+              <li class="icon solid fa-home">123 王者大道<br />上海市, 中國</li>
+            </ul>
+          </section>
+
+          <!-- Footer -->
+          <footer id="footer">
+            <p class="copyright">&copy; 王者榮耀官方網站. 版權所有.</p>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      // JavaScript to filter heroes based on selected type
+      document.getElementById('hero-type').addEventListener('change', function() {
+        let selectedType = this.value;
+        let heroItems = document.querySelectorAll('.hero-item');
+
+        heroItems.forEach(function(item) {
+          if (selectedType === 'all' || item.getAttribute('data-type') === selectedType) {
+            item.style.display = 'block'; // Show item
+          } else {
+            item.style.display = 'none'; // Hide item
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

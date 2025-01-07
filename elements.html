@@ -1,0 +1,663 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>英雄名鑑</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<style>
+		/* 這是用來設置背景圖片 */
+		body {
+			background-image: url('images/background.jpg.png');  /* 設定背景圖片路徑 */
+			background-size: cover;                          /* 讓圖片完全覆蓋整個頁面 */
+			background-position: center;                      /* 讓圖片居中顯示 */
+			background-attachment: fixed;                     /* 背景圖片固定顯示，不隨著滾動條移動 */
+		}
+
+		/* 新增圖片展示容器的Flexbox布局 */
+		.hero-gallery {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;  /* 圖片居中顯示 */
+			gap: 10px;                /* 圖片之間的間距 */
+			padding: 20px;
+		}
+
+		.hero-item {
+			width: 120px;             /* 設定每個小圖片的寬度 */
+			text-align: center;       /* 圖片和標題都居中 */
+		}
+
+		.hero-item img {
+			width: 100%;              /* 圖片佔滿整個容器 */
+			border-radius: 8px;       /* 圓角效果 */
+		}
+
+		/* 圖片標題的樣式 */
+		.hero-item h3 {
+			margin-top: 8px;          /* 標題和圖片的間距 */
+			font-size: 14px;          /* 標題字體大小 */
+			color: #333;              /* 標題文字顏色 */
+			text-shadow: 1px 1px 2px rgba(209, 209, 205, 0.8); /* 增加文字陰影以提高可讀性 */
+		}
+
+		/* 調整圖片間距和對齊方式 */
+		.hero-gallery img {
+			margin: 5px;
+		}
+
+		/* 標題上方的篩選選單樣式 */
+		.filter-container {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		.filter-container select {
+			font-size: 16px;
+			padding: 8px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			background-color: #fff;
+			cursor: pointer;
+		}
+
+	</style>
+
+	<body class="is-preload">
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+					<!-- Header -->
+<header id="header">
+    <a href="index.html" class="logo"><strong>王者榮耀首頁 / 英雄名鑑</strong></a>
+    <ul class="icons">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <li><a href="https://weibo.com/heromoba" class="icon brands fa-weibo" target="_blank"><span class="label">微博</span></a></li>
+        <li><a href="https://weixin.qq.com" class="icon brands fa-weixin" target="_blank"><span class="label">微信</span></a></li>
+        <li><a href="https://game.qq.com/web202406/#/pc/home" class="icon brands fa-tencent-weibo" target="_blank"><span class="label">Instagram</span></a></li>
+    </ul>
+</header>
+
+
+					<!-- Content -->
+					<section>
+						<header class="main">
+							<h1>英雄名鑑</h1>
+						</header>
+
+						<!-- Filter Dropdown for Hero Types -->
+						<div class="filter-container">
+							<select id="hero-type" name="hero-type">
+								<option value="all">所有類型</option>
+								<option value="tank">坦克</option>
+								<option value="warrior">戰士</option>
+								<option value="mage">法師</option>
+								<option value="assassin">刺客</option>
+								<option value="marksman">射手</option>
+								<option value="support">輔助</option>
+							</select>
+						</div>
+
+						<!-- Hero Gallery -->
+						<div class="hero-gallery">
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero1"><img src="images/her1.jpg" alt="Hero 1" /></a>
+								<h3>影</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero2"><img src="images/her2.jpg" alt="Hero 2" /></a>
+								<h3>蒼</h3>
+							</div>
+							<div class="hero-item" data-type="support">
+								<a href="hero_details.html?hero=hero3"><img src="images/her3.jpg" alt="Hero 3" /></a>
+								<h3>少司緣</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero4"><img src="images/her4.jpg" alt="Hero 4" /></a>
+								<h3>元流之子（坦克）</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero5"><img src="images/her5.jpg" alt="Hero 5" /></a>
+								<h3>元流之子（法師）</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her6.jpg" alt="Hero 6" /></a>
+								<h3>大司命</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her7.jpg" alt="Hero 6" /></a>
+								<h3>敖隱</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her8.jpg" alt="Hero 6" /></a>
+								<h3>海諾</h3>
+							</div>
+							<div class="hero-item" data-type="support">
+								<a href="hero_details.html?hero=hero6"><img src="images/her9.jpg" alt="Hero 6" /></a>
+								<h3>朵莉亞</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her10.jpg" alt="Hero 6" /></a>
+								<h3>亞連</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her11.jpg" alt="Hero 6" /></a>
+								<h3>姬小滿</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her12.jpg" alt="Hero 6" /></a>
+								<h3>萊西奧</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her13.jpg" alt="Hero 6" /></a>
+								<h3>趙懷真</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her14.jpg" alt="Hero 6" /></a>
+								<h3>海月</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her15.jpg" alt="Hero 6" /></a>
+								<h3>戈婭</h3>
+							</div>
+							<div class="hero-item" data-type="support">
+								<a href="hero_details.html?hero=hero6"><img src="images/her16.jpg" alt="Hero 6" /></a>
+								<h3>桑啟</h3>
+							</div>
+							<div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her17.jpg" alt="Hero 6" /></a>
+								<h3>暃</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her18.jpg" alt="Hero 6" /></a>
+								<h3>金蟬</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her19.jpg" alt="Hero 6" /></a>
+								<h3>云櫻</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her20.jpg" alt="Hero 6" /></a>
+								<h3>艾琳</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her21.jpg" alt="Hero 6" /></a>
+								<h3>司空震</h3>
+							</div>
+							<div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her22.jpg" alt="Hero 6" /></a>
+								<h3>瀾</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her23.jpg" alt="Hero 6" /></a>
+								<h3>夏洛特</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her24.jpg" alt="Hero 6" /></a>
+								<h3>阿古朵</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her25.jpg" alt="Hero 6" /></a>
+								<h3>蒙恬</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her26.jpg" alt="Hero 6" /></a>
+								<h3>鏡</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her27.jpg" alt="Hero 6" /></a>
+								<h3>蒙犽</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her28.jpg" alt="Hero 6" /></a>
+								<h3>魯班大師</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her29.jpg" alt="Hero 6" /></a>
+								<h3>西施</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her30.jpg" alt="Hero 6" /></a>
+								<h3>馬超</h3>
+							</div>
+							<div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her31.jpg" alt="Hero 6" /></a>
+								<h3>曜</h3>
+							</div>
+							<div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her32.jpg" alt="Hero 6" /></a>
+								<h3>云中君</h3>
+							</div>
+							<div class="hero-item" data-type="support">
+								<a href="hero_details.html?hero=hero6"><img src="images/her33.jpg" alt="Hero 6" /></a>
+								<h3>瑤</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her34.jpg" alt="Hero 6" /></a>
+								<h3>盤古</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her35.jpg" alt="Hero 6" /></a>
+								<h3>豬八戒</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her36.jpg" alt="Hero 6" /></a>
+								<h3>嫦娥</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her37.jpg" alt="Hero 6" /></a>
+								<h3>上官婉兒</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her38.jpg" alt="Hero 6" /></a>
+								<h3>李信</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her39.jpg" alt="Hero 6" /></a>
+								<h3>沈夢溪</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her40.jpg" alt="Hero 6" /></a>
+								<h3>伽羅</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her41.jpg" alt="Hero 6" /></a>
+								<h3>盾山</h3>
+							</div>
+							<div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her42.jpg" alt="Hero 6" /></a>
+								<h3>司馬懿</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her43.jpg" alt="Hero 6" /></a>
+								<h3>孫策</h3>
+							</div>
+							<div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her44.jpg" alt="Hero 6" /></a>
+								<h3>元歌</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her45.jpg" alt="Hero 6" /></a>
+								<h3>米萊狄</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her46.jpg" alt="Hero 6" /></a>
+								<h3>狂鐵</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her47.jpg" alt="Hero 6" /></a>
+								<h3>弈星</h3>
+							</div>
+							<div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her48.jpg" alt="Hero 6" /></a>
+								<h3>裴擒虎</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her49.jpg" alt="Hero 6" /></a>
+								<h3>楊玉環</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her50.jpg" alt="Hero 6" /></a>
+								<h3>公孫離</h3>
+							</div>
+							<div class="hero-item" data-type="support">
+								<a href="hero_details.html?hero=hero6"><img src="images/her51.jpg" alt="Hero 6" /></a>
+								<h3>明世隱</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her52.jpg" alt="Hero 6" /></a>
+								<h3>女媧</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her53.jpg" alt="Hero 6" /></a>
+								<h3>夢奇</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her54.jpg" alt="Hero 6" /></a>
+								<h3>蘇烈</h3>
+							</div>
+							<div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her55.jpg" alt="Hero 6" /></a>
+								<h3>百里玄策</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her56.jpg" alt="Hero 6" /></a>
+								<h3>百里守約</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her57.jpg" alt="Hero 6" /></a>
+								<h3>鎧</h3>
+							</div>
+							<div class="hero-item" data-type="support">
+								<a href="hero_details.html?hero=hero6"><img src="images/her58.jpg" alt="Hero 6" /></a>
+								<h3>鬼穀子</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her59.jpg" alt="Hero 6" /></a>
+								<h3>干將莫邪</h3>
+							</div>
+							<div class="hero-item" data-type="support">
+								<a href="hero_details.html?hero=hero6"><img src="images/her60.jpg" alt="Hero 6" /></a>
+								<h3>東皇太一</h3>
+							</div>
+							<div class="hero-item" data-type="support">
+								<a href="hero_details.html?hero=hero6"><img src="images/her61.jpg" alt="Hero 6" /></a>
+								<h3>大喬</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her62.jpg" alt="Hero 6" /></a>
+								<h3>黃忠</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her63.jpg" alt="Hero 6" /></a>
+								<h3>諸葛亮</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her64.jpg" alt="Hero 6" /></a>
+								<h3>哪吒</h3>
+							</div>
+							<div class="hero-item" data-type="support">
+								<a href="hero_details.html?hero=hero6"><img src="images/her65.jpg" alt="Hero 6" /></a>
+								<h3>太乙真人</h3>
+							</div>
+							<div class="hero-item" data-type="support">
+								<a href="hero_details.html?hero=hero6"><img src="images/her66.jpg" alt="Hero 6" /></a>
+								<h3>蔡文姬</h3>
+							</div>
+							<div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her67.jpg" alt="Hero 6" /></a>
+								<h3>雅典娜</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her68.jpg" alt="Hero 6" /></a>
+								<h3>楊戩</h3>
+							</div>
+							<div class="hero-item" data-type="support">
+								<a href="hero_details.html?hero=hero6"><img src="images/her69.jpg" alt="Hero 6" /></a>
+								<h3>鍾馗</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her70.jpg" alt="Hero 6" /></a>
+								<h3>虞姬</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her71.jpg" alt="Hero 6" /></a>
+								<h3>李元芳</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her72.jpg" alt="Hero 6" /></a>
+								<h3>張飛</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her73.jpg" alt="Hero 6" /></a>
+								<h3>劉備</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her74.jpg" alt="Hero 6" /></a>
+								<h3>后羿</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her75.jpg" alt="Hero 6" /></a>
+								<h3>牛魔</h3>
+							</div>
+							<div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her76.jpg" alt="Hero 6" /></a>
+								<h3>孫悟空</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her77.jpg" alt="Hero 6" /></a>
+								<h3>亞瑟</h3>
+							</div>
+							<div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her78.jpg" alt="Hero 6" /></a>
+								<h3>橘右京</h3>
+							</div><div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her79.jpg" alt="Hero 6" /></a>
+								<h3>娜可露露</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her80.jpg" alt="Hero 6" /></a>
+								<h3>不知火舞</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her81.jpg" alt="Hero 6" /></a>
+								<h3>張良</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her82.jpg" alt="Hero 6" /></a>
+								<h3>花木蘭</h3>
+							</div><div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her83.jpg" alt="Hero 6" /></a>
+								<h3>蘭陵王</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her84.jpg" alt="Hero 6" /></a>
+								<h3>王昭君</h3>
+							</div>
+							<div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her85.jpg" alt="Hero 6" /></a>
+								<h3>韓信</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her86.jpg" alt="Hero 6" /></a>
+								<h3>劉邦</h3>
+							</div><div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her87.jpg" alt="Hero 6" /></a>
+								<h3>姜子牙</h3>
+							</div>
+							<div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her88.jpg" alt="Hero 6" /></a>
+								<h3>露娜</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her89.jpg" alt="Hero 6" /></a>
+								<h3>程咬金</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her90.jpg" alt="Hero 6" /></a>
+								<h3>安琪拉</h3>
+							</div><div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her91.jpg" alt="Hero 6" /></a>
+								<h3>貂蟬</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her92.jpg" alt="Hero 6" /></a>
+								<h3>關羽</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her93.jpg" alt="Hero 6" /></a>
+								<h3>老夫子</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her94.jpg" alt="Hero 6" /></a>
+								<h3>武則天</h3>
+							</div><div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her95.jpg" alt="Hero 6" /></a>
+								<h3>項羽</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her96.jpg" alt="Hero 6" /></a>
+								<h3>達摩</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her97.jpg" alt="Hero 6" /></a>
+								<h3>狄仁杰</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her98.jpg" alt="Hero 6" /></a>
+								<h3>馬可波羅</h3>
+							</div><div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her99.jpg" alt="Hero 6" /></a>
+								<h3>李白</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her100.jpg" alt="Hero 6" /></a>
+								<h3>宮本武藏</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her101.jpg" alt="Hero 6" /></a>
+								<h3>典韋</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her102.jpg" alt="Hero 6" /></a>
+								<h3>曹操</h3>
+							</div><div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her103.jpg" alt="Hero 6" /></a>
+								<h3>甄姬</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her104.jpg" alt="Hero 6" /></a>
+								<h3>夏侯惇</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her105.jpg" alt="Hero 6" /></a>
+								<h3>周瑜</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her106.jpg" alt="Hero 6" /></a>
+								<h3>呂布</h3>
+							</div><div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her107.jpg" alt="Hero 6" /></a>
+								<h3>羋月</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her108.jpg" alt="Hero 6" /></a>
+								<h3>白起</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her109.jpg" alt="Hero 6" /></a>
+								<h3>扁鵲</h3>
+							</div>
+							<div class="hero-item" data-type="support">
+								<a href="hero_details.html?hero=hero6"><img src="images/her110.jpg" alt="Hero 6" /></a>
+								<h3>孫臏</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her111.jpg" alt="Hero 6" /></a>
+								<h3>鍾無艷</h3>
+							</div>
+							<div class="hero-item" data-type="assassin">
+								<a href="hero_details.html?hero=hero6"><img src="images/her112.jpg" alt="Hero 6" /></a>
+								<h3>阿珂</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her113.jpg" alt="Hero 6" /></a>
+								<h3>高漸離</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her114.jpg" alt="Hero 6" /></a>
+								<h3>劉禪</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her115.jpg" alt="Hero 6" /></a>
+								<h3>莊周</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her116.jpg" alt="Hero 6" /></a>
+								<h3>魯班七號</h3>
+							</div>
+							<div class="hero-item" data-type="marksman">
+								<a href="hero_details.html?hero=hero6"><img src="images/her117.jpg" alt="Hero 6" /></a>
+								<h3>孫尚香</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her118.jpg" alt="Hero 6" /></a>
+								<h3>嬴政</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her119.jpg" alt="Hero 6" /></a>
+								<h3>妲己</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her120.jpg" alt="Hero 6" /></a>
+								<h3>墨子</h3>
+							</div>
+							<div class="hero-item" data-type="warrior">
+								<a href="hero_details.html?hero=hero6"><img src="images/her121.jpg" alt="Hero 6" /></a>
+								<h3>趙雲</h3>
+							</div>
+							<div class="hero-item" data-type="mage">
+								<a href="hero_details.html?hero=hero6"><img src="images/her122.jpg" alt="Hero 6" /></a>
+								<h3>小喬</h3>
+							</div>
+							<div class="hero-item" data-type="tank">
+								<a href="hero_details.html?hero=hero6"><img src="images/her123.jpg" alt="Hero 6" /></a>
+								<h3>廉頗</h3>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+
+			<!-- Sidebar -->
+			<div id="sidebar">
+				<div class="inner">
+					<!-- Search -->
+					<section id="search" class="alt">
+						<form method="post" action="#">
+							<input type="text" name="query" id="query" placeholder="搜尋英雄或攻略" />
+						</form>
+					</section>
+
+					<!-- Menu -->
+					<nav id="menu">
+						<header class="major">
+							<h2>導航</h2>
+						</header>
+						<ul>
+							<li><a href="index.html">首頁</a></li>
+							<li><a href="activity.html">版本專區</a></li>
+							<li><a href="elements.html">英雄名鑑</a></li>
+							<li><a href="background.html">遊戲壁紙</a></li>
+							<li><a href="generic.html">騰訊成長守護</a></li>
+						</ul>
+					</nav>
+
+					<!-- Contact -->
+					<section>
+						<header class="major">
+							<h2>聯繫我們</h2>
+						</header>
+						<p>如有任何問題，歡迎聯繫我們的客服團隊。</p>
+						<ul class="contact">
+							<li class="icon solid fa-envelope"><a href="mailto:service@honorofkings.com">service@honorofkings.com</a></li>
+							<li class="icon solid fa-phone">(888) 888-8888</li>
+							<li class="icon solid fa-home">123 王者大道<br />上海市, 中國</li>
+						</ul>
+					</section>
+
+					<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; 王者榮耀官方網站. 版權所有.</p>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<script>
+			// JavaScript to filter heroes based on selected type
+			document.getElementById('hero-type').addEventListener('change', function() {
+				let selectedType = this.value;
+				let heroItems = document.querySelectorAll('.hero-item');
+
+				heroItems.forEach(function(item) {
+					if (selectedType === 'all' || item.getAttribute('data-type') === selectedType) {
+						item.style.display = 'block'; // Show item
+					} else {
+						item.style.display = 'none'; // Hide item
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
